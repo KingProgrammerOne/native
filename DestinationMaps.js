@@ -32,7 +32,7 @@ const items = [{ id:1,title:'ROME New YORK',    score: 2.2, geo: 'Roman, NY', bt
 ];
 
 
-export default class DestinationPage extends Component {
+export default class DestinationMaps extends Component {
   constructor(props) {
     super(props);
     this.state = {
