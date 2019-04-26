@@ -47,10 +47,10 @@ export default class DestinationMaps extends Component {
   render() {
     return (
       <Container>
-            <ImageBackground  source={items[0].pic} style={{ height: 140, width:"100%"}}> 
+            <ImageBackground  source={items[0].pic} style={{ height: 90, width:"100%"}}> 
               <Header style={styles.container}>
 
-                <Item style={{width:'100%',height:35, backgroundColor:'white', borderRadius:5,}}>
+                <Item style={{width:'100%',height:35, backgroundColor:'white', borderRadius:5, marginTop:10}}>
 
                   <Button transparent style={styles.switchBtn}>   
                     <Icon  name='search' style={{fontSize:25, color:'#989898', paddingLeft:0}}/>
@@ -67,7 +67,7 @@ export default class DestinationMaps extends Component {
 
                 </Item>
 
-                <Item style={{borderBottomWidth:0, justifyContent:'center',alignSelf:'center'}}>
+                <Item style={{borderBottomWidth:0, justifyContent:'center',alignSelf:'center',marginTop:0}}>
 
                   <Left style={{width:'20%'}}>
                     <Button transparent style={{marginBottom:0}}>
@@ -89,178 +89,13 @@ export default class DestinationMaps extends Component {
 
                   {/* <Right/> */}
 
-                </Item>
-
-                <Item style={styles.footCss}>
-
-                <Button vertical style={{backgroundColor:'#F3F7FA'}}>
-                    <Icon type="MaterialIcons" name='hotel' style={styles.headerIcon}></Icon>
-                    <Text  style={styles.iconText}>
-                        stay
-                    </Text>
-                </Button>
-                <Button vertical style={{backgroundColor:'#F3F7FA'}}>
-                    <Icon type="Entypo" name='camera' style={styles.headerIcon}></Icon>
-                    <Text  style={styles.iconText}>
-                        see
-                    </Text>
-                </Button>
-                <Button vertical style={{backgroundColor:'#F3F7FA'}}>
-                    <Icon type="FontAwesome" name='glass' style={styles.headerIcon}></Icon>
-                    <Text  style={styles.iconText}>
-                        eat
-                    </Text>
-                </Button>
-                <Button vertical style={{backgroundColor:'#F3F7FA'}}>
-                    <Icon type="Entypo" name='drink' style={styles.headerIcon}></Icon>
-                    <Text  style={styles.iconText}>
-                        drink
-                    </Text>
-                </Button>
-                <Button vertical style={{backgroundColor:'#F3F7FA'}}>
-                    <Icon type="Entypo" name='shopping-cart' style={styles.headerIcon}></Icon>
-                    <Text  style={styles.iconText}>
-                        shop
-                    </Text>
-                </Button>
-                <Button vertical style={{backgroundColor:'#F3F7FA'}}>
-                    <Icon type="MaterialCommunityIcons" name='run' style={styles.headerIcon}></Icon>
-                    <Text  style={styles.iconText}>
-                        play
-                    </Text>
-                </Button>
-                <Button vertical style={{backgroundColor:'#F3F7FA'}}>
-                    <Icon type="FontAwesome5" name='spa' style={styles.headerIcon}></Icon>
-                    <Text  style={styles.iconText}>
-                        relax
-                    </Text>
-                </Button>
-                <Button vertical style={{backgroundColor:'#F3F7FA'}}>
-                    <Icon type="FontAwesome5" name='seedling' style={styles.headerIcon}></Icon>
-                    <Text  style={styles.iconText}>
-                        watch
-                    </Text>
-                </Button>
-
-                </Item>
-
+                </Item>                
               </Header>
             </ImageBackground>
           <Content style={{backgroundColor:'#E3E4E5'}}>
-            <List dataArray={items}
-            vertical
-            renderRow={(item) =>
-              <ListItem style={{marginLeft:0, width:'100%',height:170, backgroundColor:'#fff', marginTop:5, paddingBottom:0, paddingTop:0}}>
-
-                  <View style={{borderColor:'white', borderWidth:2, backgroundColor:'green', width:'40%', height:'100%'}}>
-                    <Image source={item.pic} style={{width:'100%', height:'100%',}}/>
-                    <Text style={{
-                        position:'absolute',
-                        left:20,
-                        top:15,
-                        fontSize:30,
-                        color:'#fff',
-                        textShadowColor:'#000',
-                        textShadowOffset: {width: -1, height: 1},
-                        textShadowRadius: 10
-
-                    }}                              
-                    >{item.id}</Text>
-                  </View>
-
-                  {/* content */}
-                  <View style={{ width:'60%', height:'100%', paddingLeft:10, paddingTop:5, paddingBottom:5,paddingRight:5, flexDirection:'column'}}>
-                    <View style={{backgroundColor:'transparent', width:'100%',flexDirection:'row'}}>
-                      <View style={{backgroundColor:'transparent', width:'85%',paddingLeft:10}}>
-                        <Text style={{backgroundColor:'transparent'}}>{item.title}</Text>
-                        <View style={{backgroundColor:'transparent', height:25, marginTop:10,}}>
-                          <Grid >
-                            <Col>
-                              <Image source={require('./src/star/starGold.png')} style={{ width:100, height:20, left:0}} />
-                              <View style={{
-                                      //position: 'absolute',                                
-                                      backgroundColor: '#fff',
-                                      marginTop:-20,
-                                      marginLeft:this.state.score*20,
-                                      width: 100- this.state.score*20,
-                                      height: 20,
-                                    }}
-                                    />
-                              {/* <Image source={require('./src/star/starBlack.png')} style={{ width:100, height:20,marginTop:-30, paddingBottom:20,}} /> */}
-                              <View style={{
-                                      //position: 'absolute',                                  
-                                      backgroundColor: 'transparent',
-                                      marginTop:-10,
-                                      width: this.state.score*20,
-                                      height: 20,
-                                    }}
-                                    />
-                            </Col>
-                            <Col style={{width:'30%'}}>
-                              <Text>({item.score})</Text>
-                            </Col>
-                          </Grid>
-                        </View>
-                      </View>
-
-                      {/* ribbon */}
-                      <View style={{ width:'15%',}}>
-                        <Text style={{backgroundColor:'transparent', color:'black'}}><Icon name='heart'/></Text>
-                      </View>
-                    </View>
-
-                    <View style={{paddingLeft:10,paddingTop:10, backgroundColor:'transparent'}}>                      
-                      <Text><Icon type='FontAwesome' name='map-marker'/> {item.geo}</Text>
-                    </View>
-                    <View style={{paddingLeft:10, flexDirection:'row', marginTop:10}}>
-                      <Text style={{backgroundColor:'#000', color:'#fff', marginRight:5}}>{item.btn[0]}</Text>
-                      <Text style={{backgroundColor:'#E3E4E5', borderColor: '#000', borderWidth:1}}>{item.btn[1]}</Text>
-                    </View>
-
-                  </View>
-
-
-             </ListItem>
-            }>
-          </List>
-        </Content>
-        <Footer>            
-          <FooterTab style={styles.footCss}>
-            <Button vertical>
-              <Icon type="AntDesign" name='earth' style={styles.footerIcon}></Icon>
-              <Text  style={styles.iconText}>
-                        Explorer
-              </Text>
-            </Button>
-
-            <Button vertical active>
-              <Icon type="Entypo" name='camera' style={styles.footerIcon}></Icon>
-                    <Text  style={styles.iconText}>
-                        My Trips
-                    </Text>
-            </Button>
-
-            <Button vertical>
-                <Icon type="FontAwesome" name='heart-o' style={styles.footerIcon}></Icon>
-                    <Text style={styles.iconText}>
-                        My bucket List
-                    </Text>
-            </Button>
-
-            <Button vertical>
-                <Icon type="Entypo" name='user' style={styles.footerIcon}></Icon>
-                    <Text  style={styles.iconText}>
-                        Profile
-                    </Text>
-            </Button>
             
-            <Button vertical>
-              <Icon type='Entypo' name='dots-three-horizontal' style={styles.footerIcon }></Icon>
-              {/* <Text style={styles.iconText}>                       
-              </Text> */}
-            </Button>
-          </FooterTab>
-        </Footer>
+          </Content>
+
       </Container>
     );
   }
@@ -268,14 +103,14 @@ export default class DestinationMaps extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    height:150,
+    height:90,
     alignItems: 'center',
     backgroundColor:'transparent',
      elevation: 0,             // Remove shadow on Android
      shadowOpacity: 0  ,       // Remove shadow on iOS
    //  flex:1,
     flexDirection: 'column',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     
   },
   btnTextCol:{

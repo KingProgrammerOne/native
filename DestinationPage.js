@@ -50,7 +50,7 @@ export default class DestinationPage extends Component {
             <ImageBackground  source={items[0].pic} style={{ height: 140, width:"100%"}}> 
               <Header style={styles.container}>
 
-                <Item style={{width:'100%',height:35, backgroundColor:'white', borderRadius:5,}}>
+                <Item style={{width:'100%',height:35, backgroundColor:'white', borderRadius:5, marginTop:10}}>
 
                   <Button transparent style={styles.switchBtn}>   
                     <Icon  name='search' style={{fontSize:25, color:'#989898', paddingLeft:0}}/>
@@ -67,7 +67,7 @@ export default class DestinationPage extends Component {
 
                 </Item>
 
-                <Item style={{borderBottomWidth:0, justifyContent:'center',alignSelf:'center'}}>
+                <Item style={{borderBottomWidth:0, justifyContent:'center',alignSelf:'center',  marginTop:0}}>
 
                   <Left style={{width:'20%'}}>
                     <Button transparent style={{marginBottom:0}}>
@@ -275,7 +275,7 @@ const styles = StyleSheet.create({
      shadowOpacity: 0  ,       // Remove shadow on iOS
    //  flex:1,
     flexDirection: 'column',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     
   },
   btnTextCol:{
