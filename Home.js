@@ -31,9 +31,6 @@ export default class Home extends Component {
     this.state = {text: ''};
     Text.defaultProps.uppercase = false;
   }
-  goToAbout = () => {
-           Actions.about()
-        }
   render() {
     return (
       <Container>
@@ -93,7 +90,7 @@ export default class Home extends Component {
             <Button vertical>
               <Icon  type='Entypo' name='dots-three-horizontal' style={styles.footerIcon}></Icon>
             </Button>
-            <Button vertical onPress = {goToAbout}>
+            <Button vertical >
               <Icon type="MaterialIcons" name='hotel' style={styles.footerIcon}></Icon>
               <Text numberOfLines={1} style={styles.iconText}>
                         Hotel

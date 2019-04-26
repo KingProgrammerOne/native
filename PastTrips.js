@@ -59,9 +59,9 @@ export default class PastTrips extends Component {
                 <ListItem style={{borderBottomWidth:0, borderWidth:0, paddingLeft:0, paddingRight:0,paddingTop:5, paddingBottom:5, marginLeft:0}}>
 
                     <ImageBackground source={item.pic} style={{width:'100%', height:200}}>
-                      <View style={{marginLeft:50}}>
-                        <Text numberOfLines={1}>{item.place}</Text>
-                        <Text numberOfLines={1}>{item.day}</Text>
+                      <View style={{marginLeft:50, marginBottom:20}}>
+                        <Text numberOfLines={1} style={styles.welcome}>{item.place}</Text>
+                        <Text numberOfLines={1} style={styles.welcome1}>{item.day}</Text>
                       </View>
                     </ImageBackground>
 
@@ -131,8 +131,20 @@ const styles = StyleSheet.create({
   },
   welcome: {
     fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+    width:'100%',
+    color:'#fff', 
+    textShadowColor:'#000',
+    textShadowOffset: {width: -1, height: 1},
+    textShadowRadius: 10,
+    marginTop:40,
+  },
+  welcome1: {
+    fontSize: 20,
+    width:'100%',
+    color:'#fff', 
+    textShadowColor:'#000',
+    textShadowOffset: {width: -1, height: 1},
+    textShadowRadius: 10,
   },
   instructions: {
     textAlign: 'center',

@@ -10,6 +10,7 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Image, ImageBackground,View, TextInput} from 'react-native';
 import { Container, Header,Title, Content, Footer, FooterTab,Card,CardItem,Item, Input, Button, Left, Right, Body, Icon, Col, Row, Label, Text, Form, Grid, List, ListItem } from 'native-base';
+import PastTrips from './PastTrips';
 
 
 const instructions = Platform.select({
@@ -25,8 +26,11 @@ var myCard=require('./src/img/bg.jpg');
 var myCard1=require('./src/img/sea.jpg'); 
 var myCard2=require('./src/img/epel.jpg'); 
 var icon=require('./src/img/icon/muv.png');
-const items = ['Daniel Michael Blake Day-Lewis', 'Kiefer William Frederick Dempsey George Rufus Sutherland', 'Isabella Fiorella Elettra Giovanna Rossellini', 'Charles Philip Arthur George Mountbatten-Windsor', 'Johannes Chrysostomus Wolfgangus Theophilus Mozart'];
-
+const items = [{ id:1,title:'ROME New YORK',    score: 2.2, subtitle: 'Roman, NY', btn:['MIDTOWN','SIGHT'], pic: require('./src/img/New_York_City_044.jpg')}, 
+               { id:2,title:'Indonesia See of KaaNew YORK', score: 4.5, subtitle: 'New york,NY', btn:['MIDTOWN','LANDMARK'],pic:require('./src/img/bg.jpg')},
+               { id:3,title:'LONDON',  score: 5, subtitle: 'London,NY', btn:['MIDTOWN','BUILDING'],pic:require('./src/img/sea.jpg')},
+              
+];
 export default class Home extends Component {
   constructor(props) {
     super(props);
@@ -36,7 +40,6 @@ export default class Home extends Component {
   render() {
     return (
       <Container>
-          {/* <ImageBackground source={bg} style={{width: '100%', height: 60}}> */}
           <Header style={styles.container}>
               
           <Item style={{width:'100%',height:35, backgroundColor:'white', borderRadius:5}}>
@@ -49,34 +52,58 @@ export default class Home extends Component {
           </Header>
           {/* </ImageBackground>  */}
           <Content style={{backgroundColor:'black'}}>
+
             <View style={{marginLeft:50}}>
-                    <Text style={{color:'white'}}>Al Personalized for you</Text>
+                    <Text style={styles.welcome}>Al Personalized for you</Text>
             </View>
+
             <List dataArray={items}
             horizontal
             renderRow={(item) =>
-              <ListItem style={{borderBottomWidth:0, borderWidth:0}}>
-                {/* <Card >
-                  <CardItem cardBody style={{backgroundColor:'black'}}>
-                    <Image source={myCard1} style={{ width: 200, height: 200 }} resizeMode="contain" />
-                  </CardItem>
-                  <CardItem style={{ width: 200 , backgroundColor:'black'}}>
-                    <Text numberOfLines={1} style={{color:'white'}}>{item}</Text>
-                  </CardItem>
-                </Card> */}
-                <ImageBackground source={bg} style={{width:200, height:200}}>
-                  {/* <View style={{marginLeft:50}}>
-                    <Text numberOfLines={1}>{item}</Text>
-                  </View> */}
-                </ImageBackground>
-                {/* <ImageBackground source={bg} style={{width:200, height:200}}>
-                  <View style={{marginLeft:50}}>
-                    <Text numberOfLines={1}>{item}</Text>
-                  </View>
-                </ImageBackground> */}
+              <ListItem style={{borderBottomWidth:0, borderWidth:0, flexDirection:'column', marginLeft:3}}>
+  
+                <ImageBackground source={item.pic} style={{width:170, height:170}}/>
+                <View style={{width:170}}>
+                  <Text numberOfLines={1} style={{color:'#fff'}}>
+                    {item.title}
+                  </Text>
+                </View>
+                <View style={{width:170}}>
+                  <Text numberOfLines={1} style={{color:'#fff'}}>
+                    {item.subtitle}
+                  </Text>
+                </View>
+
              </ListItem>
             }>
           </List>
+
+            <View style={{marginLeft:50}}>
+                    <Text style={styles.welcome}>PastTrips</Text>
+            </View>
+
+            <List dataArray={items}
+            horizontal
+            renderRow={(item) =>
+              <ListItem style={{borderBottomWidth:0, borderWidth:0, flexDirection:'column', marginLeft:3}}>
+  
+                <ImageBackground source={item.pic} style={{width:170, height:170}}/>
+                <View style={{width:170}}>
+                  <Text numberOfLines={1} style={{color:'#fff'}}>
+                    {item.title}
+                  </Text>
+                </View>
+                <View style={{width:170}}>
+                  <Text numberOfLines={1} style={{color:'#fff'}}>
+                    {item.subtitle}
+                  </Text>
+                </View>
+
+             </ListItem>
+            }>
+          </List>
+
+
           </Content>
         <Footer>            
             <FooterTab style={styles.footCss}>
@@ -143,8 +170,7 @@ const styles = StyleSheet.create({
   },
   welcome: {
     fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+    color:'white'
   },
   instructions: {
     textAlign: 'center',

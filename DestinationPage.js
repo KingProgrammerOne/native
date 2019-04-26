@@ -36,7 +36,7 @@ export default class DestinationPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      score: 2.5
+      score: 4.5
     };
     Text.defaultProps.uppercase = false;
     
@@ -186,7 +186,6 @@ export default class DestinationPage extends Component {
                                       height: 20,
                                     }}
                                     />
-                              {/* <Image source={require('./src/star/starBlack.png')} style={{ width:100, height:20,marginTop:-30, paddingBottom:20,}} /> */}
                               <View style={{
                                       //position: 'absolute',                                  
                                       backgroundColor: 'transparent',
@@ -219,11 +218,11 @@ export default class DestinationPage extends Component {
 
                   </View>
 
-
              </ListItem>
             }>
           </List>
         </Content>
+        
         <Footer>            
           <FooterTab style={styles.footCss}>
             <Button vertical>
@@ -256,9 +255,8 @@ export default class DestinationPage extends Component {
             
             <Button vertical>
               <Icon type='Entypo' name='dots-three-horizontal' style={styles.footerIcon }></Icon>
-              {/* <Text style={styles.iconText}>                       
-              </Text> */}
             </Button>
+
           </FooterTab>
         </Footer>
       </Container>

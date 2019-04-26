@@ -96,7 +96,7 @@ export default class DestinationList extends Component {
             </Button>
 
             <Button vertical>
-                <Icon type="MaterialCommunityIcons" name='account' style={styles.footerIcon}></Icon>
+                <Icon type="Entypo" name='user' style={styles.footerIcon}></Icon>
                     <Text  style={styles.iconText}>
                         Profile
                     </Text>
@@ -150,17 +150,17 @@ const styles = StyleSheet.create({
     justifyContent:'center',    
   },
   footCss:{
-    backgroundColor:'#1F3239'
-    
+    backgroundColor:'#fff',
+   
   },
   footerIcon:{
     fontSize: 19,
-    color:'white'
+    color:'#000'
   },
 
   iconText: {
     fontSize: 12,
-    color:'white',
+    color:'#000',
     paddingLeft: 0,
     paddingRight: 0,
     paddingTop:5,
